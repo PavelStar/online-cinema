@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.primary {
+    padding: 17px 34px;
+    background-color: $accent-primary;
+    color: #fff;
+    border-radius: 3px;
+
+    &:hover,
+    &:focus {
+        background-color: #f09149;
+        transition: 0.2s;
+    }
+
+    &:active {
+        background-color: #eda171;
+    }
+}

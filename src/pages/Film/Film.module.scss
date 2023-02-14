@@ -1,0 +1,7 @@
+@import './src/styles/mixins';
+@import './src/styles/variables';
+
+.film-page {
+    background-color: $neutral-primary;
+    @include container;
+}

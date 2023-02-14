@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage"
+      },
+      "@babel/preset-react",
+      {
+        "pragma": "dom",
+        "pragmaFrag": "DomFrag",
+        "throwIfNamespace": false,
+        "runtime": "classic"
+      },
+      "@svgr/babel-plugin-transform-svg-component",
+      "@babel/preset-typescript"
+    ]
+  ]
+}

@@ -1,0 +1,35 @@
+@import './src/styles/variables';
+
+.menu {
+    position: relative;
+
+    .menu-icon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+
+        path {
+            fill: #fff;
+        }
+
+        &:hover {
+            path {
+                fill: #e4e4e4;
+                transition: 0.2s;
+            }
+        }
+    }
+
+    .menu-list {
+        display: grid;
+        gap: 10px;
+        width: 200px;
+        padding: 20px 15px;
+        border-radius: 3px;
+        background-color: $dark-primary;
+
+        .active-link {
+            color: $accent-primary;
+        }
+    }
+}

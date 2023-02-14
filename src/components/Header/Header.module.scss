@@ -1,0 +1,27 @@
+@import './src/styles/variables';
+@import './src/styles/mixins';
+
+.main-header {
+    display: flex;
+    padding: 20px 10px;
+    background: #000;
+    color: #fff;
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include container;
+    }
+
+    .left-col {
+        display: flex;
+    }
+
+    .right-col {
+        display: grid;
+        grid-template-columns: 500px auto;
+        align-items: center;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-standard-scss",
+        "stylelint-config-prettier-scss",
+        "stylelint-config-css-modules",
+        "stylelint-config-prettier",
+        "stylelint-config-idiomatic-order",
+        "./node_modules/prettier-stylelint/config.js"
+    ],
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "order/order": ["custom-properties", "declarations"],
+        "order/properties-order": ["width", "height"]
+    }
+}

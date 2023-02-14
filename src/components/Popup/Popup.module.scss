@@ -1,0 +1,14 @@
+.popup {
+    position: absolute;
+    height: fit-content;
+    bottom: -15px;
+    left: 0;
+    background-color: #fff;
+    border-radius: 3px;
+    transform: translateY(100%);
+    box-shadow: 5px 16px 30px -1px rgb(0 0 0 / 25%);
+}
+
+.scroll {
+    overflow-y: scroll;
+}
