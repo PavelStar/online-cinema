@@ -8,7 +8,9 @@
         "start": "webpack serve --open",
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "stylelint \"**/*.scss\"",
-        "build": "webpack"
+        "build": "webpack",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "author": "Pavel Starshinov",
     "license": "ISC",
@@ -35,6 +37,7 @@
         "eslint-plugin-n": "^15.6.0",
         "eslint-plugin-promise": "^6.1.1",
         "eslint-plugin-react": "^7.31.11",
+        "gh-pages": "^5.0.0",
         "html-webpack-plugin": "^5.5.0",
         "mini-css-extract-plugin": "^2.7.2",
         "node-sass": "^8.0.0",
