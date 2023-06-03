@@ -10,7 +10,7 @@
         "lint": "stylelint \"**/*.scss\"",
         "build": "webpack",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d dist"
     },
     "author": "Pavel Starshinov",
     "license": "ISC",
