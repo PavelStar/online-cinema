@@ -4,18 +4,19 @@ import { Input } from '../Input/Input';
 import { IconButton } from '../IconButton/IconButton';
 import { Rating } from '../Rating/Rating';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
-import { IFilmData } from '../../types';
-import { getFilms } from '../../API';
+import { IFilmByKeyword } from '../../types/types';
+import { getFilms } from '../../API/api';
 import { useDebounce } from '../../hooks/useDebounce';
 import { DropdownMenu } from '../DropdownMenu/DropdownMenu';
 import styles from './Search.module.scss';
+import { Link } from 'react-router-dom';
 
 export const Search = (): JSX.Element => {
     const [isInputShown, setIsInputShown] = useState(false);
     const [inputValue, setInputValue] = useState<string>('');
     const debouncedValue = useDebounce(inputValue, 300);
     const [isResultsShown, setIsResultsShown] = useState(false);
-    const [data, setData] = useState<IFilmData[]>();
+    const [data, setData] = useState<IFilmByKeyword[]>();
 
     const searchRef = useRef<HTMLDivElement | null>(null);
     const resultsRef = useRef<HTMLDivElement | null>(null);
@@ -75,7 +76,11 @@ export const Search = (): JSX.Element => {
                             } = item;
                             return (
                                 <li className={styles.film} key={filmId}>
-                                    <a href="#" className={styles['film-link']}>
+                                    <Link
+                                        to={`/film/${filmId}`}
+                                        className={styles['film-link']}
+                                        onClick={() => setIsResultsShown(false)}
+                                    >
                                         <img
                                             className={styles['film-img']}
                                             src={posterUrlPreview}
@@ -91,8 +96,11 @@ export const Search = (): JSX.Element => {
                                         >
                                             {nameEn}
                                         </span>
-                                        <Rating value={rating} />
-                                    </a>
+                                        <Rating
+                                            ratingValue={rating}
+                                            appearance="simple-small"
+                                        />
+                                    </Link>
                                 </li>
                             );
                         })}

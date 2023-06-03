@@ -1,0 +1,18 @@
+@import './src/styles/variables';
+
+.logo-link {
+    font-weight: 700;
+    color: $light-primary;
+
+    &.s {
+        font-size: 20px;
+    }
+
+    &.l {
+        font-size: 30px;
+    }
+
+    &:hover {
+        color: $light-secondary;
+    }
+}

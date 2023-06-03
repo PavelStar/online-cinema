@@ -1,0 +1,27 @@
+@import './src/styles/variables';
+@import './src/styles/mixins';
+
+.footer {
+    background-color: $dark-primary;
+    padding: 50px 10px;
+
+    .inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+
+        @include container;
+    }
+}
+
+.menu-list {
+    display: grid;
+    gap: 10px;
+    border-radius: 3px;
+    background-color: $dark-primary;
+
+    .active-link {
+        color: $accent-primary;
+    }
+}

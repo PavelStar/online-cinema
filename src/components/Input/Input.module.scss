@@ -14,20 +14,24 @@
 
 input {
     font-size: 16px;
+
+    &::placeholder {
+        color: $light-secondary;
+    }
 }
 
 .default {
     width: 100%;
     padding: 8px 20px;
-    border: 1px solid #373737;
-    border-radius: 3px;
+    border: 1px solid $light-secondary;
+    border-radius: 20px;
 
     &:hover,
     &:active {
-        border-color: #a8a8a8;
+        border-color: $neutral-secondary;
     }
 
     &:focus {
-        border-color: $neutral-primary;
+        border-color: $neutral-secondary;
     }
 }

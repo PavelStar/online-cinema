@@ -4,7 +4,7 @@
 .main-header {
     display: flex;
     padding: 20px 10px;
-    background: #000;
+    background: $dark-primary;
     color: #fff;
 
     .inner {
@@ -16,6 +16,8 @@
 
     .left-col {
         display: flex;
+        align-items: center;
+        gap: 20px;
     }
 
     .right-col {

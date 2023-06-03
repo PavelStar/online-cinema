@@ -1,3 +1,5 @@
+@import './src/styles/variables';
+
 .user-navigation {
     display: flex;
     align-items: center;
@@ -11,9 +13,20 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
     width: 500px;
     padding: 40px 30px;
+    border-radius: 10px;
+    background-color: $neutral-secondary;
+    color: $light-primary;
+
+    .input {
+        border-radius: 7px;
+
+        &:hover {
+            border-color: $light-primary;
+        }
+    }
 }
 
 .modal-title {
@@ -31,10 +44,14 @@
     svg {
         width: 100%;
         height: 100%;
+
+        path {
+            fill: $light-secondary;
+        }
     }
 }
 
 .fields-block {
     display: grid;
-    gap: 10px;
+    gap: 20px;
 }

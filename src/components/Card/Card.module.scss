@@ -1,0 +1,179 @@
+@import './src/styles/variables';
+
+@mixin text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    .img-wrap {
+        overflow: hidden;
+        position: relative;
+
+        .rating {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+    }
+
+    .text-wrap {
+        .title {
+            @include text-overflow;
+        }
+
+        .subtitle {
+            display: block;
+            color: $light-secondary;
+            @include text-overflow;
+        }
+    }
+}
+
+.film-lite-card {
+    $overflow-width: 150px;
+
+    width: $overflow-width;
+    gap: 10px;
+
+    .img-wrap {
+        width: $overflow-width;
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    .text-wrap {
+        .title {
+            width: $overflow-width;
+        }
+
+        .subtitle {
+            width: $overflow-width;
+        }
+    }
+
+    .rating-on-card {
+        position: absolute;
+        max-width: 150px;
+    }
+}
+
+.film-extended-card {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 15px;
+    background-color: $neutral-primary;
+    padding: 30px 20px;
+    border-radius: 15px;
+
+    .img-wrap {
+        width: 150px;
+        height: 200px;
+        border-radius: 10px;
+
+        .rating {
+            position: static;
+        }
+    }
+
+    .text-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        .titles-block,
+        .lists-block {
+            display: grid;
+            margin-bottom: 20px;
+        }
+
+        .titles-block {
+            order: -2;
+            gap: 3px;
+
+            .title {
+                font-size: 20px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+        }
+
+        .lists-block {
+            color: $light-secondary;
+
+            .countries-list,
+            .genres-list {
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+
+        .film-type-label {
+            display: inline-block;
+            order: -1;
+            padding: 2px 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: #b54e4e;
+            color: $light-primary;
+            font-size: 12px;
+
+            &.film {
+                background-color: #b16836;
+            }
+
+            &.tv-series {
+                background-color: #374c99;
+            }
+
+            &.tv-show {
+                background-color: #caca4e;
+            }
+
+            &.mini-series {
+                background-color: #43ae7d;
+            }
+        }
+    }
+}
+
+.person-card {
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    gap: 10px;
+
+    $overflow-width: 120px;
+
+    .img-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        border: 6px solid $light-secondary;
+    }
+
+    .text-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .title {
+            width: $overflow-width;
+        }
+
+        .subtitle {
+            width: $overflow-width;
+        }
+    }
+}

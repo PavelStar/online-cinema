@@ -17,6 +17,7 @@
     },
     "plugins": ["react"],
     "rules": {
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "@typescript-eslint/strict-boolean-expressions": 0
     }
 }

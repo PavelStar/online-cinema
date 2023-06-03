@@ -1,0 +1,52 @@
+@import 'src/styles/variables';
+
+.pagination {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    grid-area: pagination;
+    align-self: center;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 5px;
+    }
+
+    .prev,
+    .next {
+        path {
+            fill: $light-primary;
+        }
+
+        &:hover {
+            path {
+                fill: $neutral-secondary;
+            }
+        }
+    }
+
+    .arrow-next {
+        transform: rotate(-90deg);
+    }
+
+    .arrow-prev {
+        transform: rotate(90deg);
+    }
+
+    .page-num-active {
+        background-color: $neutral-secondary;
+        color: $light-primary;
+        border-radius: 5px;
+    }
+
+    .page-num-link {
+        &:hover {
+            background-color: $neutral-secondary;
+            color: $light-primary;
+        }
+    }
+}

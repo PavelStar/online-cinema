@@ -36,7 +36,6 @@ export const UserNavigation: FC = () => {
                 <IconButton
                     className={styles['user-btn']}
                     icon={<UserIcon />}
-                    appearance="user"
                     onClick={showModal}
                 />
             )}
@@ -56,17 +55,20 @@ export const UserNavigation: FC = () => {
                             </div>
                             <fieldset className={styles['fields-block']}>
                                 <Input
+                                    className={styles.input}
                                     type="email"
                                     labelText="Почта"
                                     placeholder="ivanov@gmail.com"
                                     id="user-email-id"
                                 />
                                 <Input
+                                    className={styles.input}
                                     labelText="Имя пользователя"
                                     placeholder="Иван Иванов"
                                     id="user-name-id"
                                 />
                                 <Input
+                                    className={styles.input}
                                     type="password"
                                     labelText="Пароль"
                                     placeholder="Ivan12345"
@@ -74,7 +76,10 @@ export const UserNavigation: FC = () => {
                                 />
                             </fieldset>
                             <div>
-                                <RectButton onClick={() => console.log('sdsf')}>
+                                <RectButton
+                                    fullWidth
+                                    onClick={() => console.log('sdsf')}
+                                >
                                     Создать пользователя
                                 </RectButton>
                             </div>

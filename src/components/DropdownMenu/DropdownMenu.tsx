@@ -11,13 +11,18 @@ interface IDropdownMenu
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     appearance?: 'absolute';
     children?: ReactNode;
+    className?: string;
 }
 
 export const DropdownMenu = forwardRef<HTMLDivElement, IDropdownMenu>(
-    ({ appearance = 'absolute', children, ...props }, ref) => {
+    ({ appearance = 'absolute', children, className, ...props }, ref) => {
         return (
             <div
-                className={cn(styles['dropdown-menu'], styles[`${appearance}`])}
+                className={cn(
+                    styles['dropdown-menu'],
+                    styles[`${appearance}`],
+                    className,
+                )}
                 ref={ref}
                 {...props}
             >

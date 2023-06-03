@@ -5,6 +5,7 @@ import { Menu } from '../Menu/Menu';
 import { Search } from '../Search/Search';
 import { UserNavigation } from '../UserNavigation/UserNavigation';
 import '../../styles/variables.scss';
+import { Logo } from '../Logo/Logo';
 
 export const Header: FC = (): JSX.Element => {
     return (
@@ -12,6 +13,7 @@ export const Header: FC = (): JSX.Element => {
             <div className={styles.inner}>
                 <div className={styles['left-col']}>
                     <Menu />
+                    <Logo />
                 </div>
                 <div className={styles['right-col']}>
                     <Search />

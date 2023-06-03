@@ -1,0 +1,43 @@
+@import './src/styles/variables';
+
+.tab-list {
+    &.horizontal {
+    }
+
+    .tab {
+        position: relative;
+
+        &:hover {
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 7px;
+                height: 100%;
+                background-color: $neutral-primary;
+            }
+        }
+
+        .tab-text {
+            display: block;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        &:hover,
+        .active {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 7px;
+                height: 100%;
+                background-color: $accent-primary;
+            }
+        }
+    }
+}

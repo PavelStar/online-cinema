@@ -4,6 +4,7 @@ import React, {
     forwardRef,
 } from 'react';
 import styles from './Input.module.scss';
+import cn from 'classnames';
 
 interface InputType
     extends DetailedHTMLProps<
@@ -12,6 +13,7 @@ interface InputType
     > {
     appearance?: 'default' | 'search';
     placeholder?: string;
+    className?: string;
     value?: string;
     labelText?: string;
     id?: string;
@@ -23,6 +25,7 @@ export const Input = forwardRef<HTMLInputElement, InputType>(
         {
             appearance = 'default',
             placeholder = '',
+            className,
             value,
             labelText,
             id = undefined,
@@ -40,7 +43,7 @@ export const Input = forwardRef<HTMLInputElement, InputType>(
                 )}
                 <input
                     type="text"
-                    className={styles[`${appearance}`]}
+                    className={cn(styles[`${appearance}`], className)}
                     placeholder={placeholder}
                     value={value}
                     id={id}

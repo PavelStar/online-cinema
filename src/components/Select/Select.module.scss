@@ -1,0 +1,65 @@
+@import './src/styles/variables';
+
+.select-wrap {
+    position: relative;
+
+    .title {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+
+    .value-container {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: $neutral-secondary;
+        cursor: pointer;
+
+        .arrow {
+            height: 8px;
+
+            path {
+                fill: $light-primary;
+            }
+        }
+
+        &.opened {
+            .arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:hover {
+            background-color: $neutral-secondary;
+        }
+    }
+
+    .dropdown-menu {
+        border-radius: 10px;
+        background-color: $neutral-primary;
+    }
+
+    .options-list {
+        max-height: 150px;
+
+        .option {
+            padding: 10px;
+            cursor: pointer;
+
+            &.active {
+                background-color: $accent-primary;
+                color: $light-primary;
+            }
+
+            &:not(.active) {
+                &:hover {
+                    background-color: $neutral-secondary;
+                }
+            }
+        }
+    }
+}

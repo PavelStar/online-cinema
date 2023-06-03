@@ -4,22 +4,36 @@ import React, {
     forwardRef,
 } from 'react';
 import styles from './RectButton.module.scss';
+import cn from 'classnames';
 
 interface IRectButton
     extends DetailedHTMLProps<
         ButtonHTMLAttributes<HTMLButtonElement>,
         HTMLButtonElement
     > {
-    appearance?: 'primary';
+    appearance?: 'primary' | 'stroked' | 'stroked-small';
+    fullWidth?: boolean;
+    className?: string;
     children?: React.ReactNode;
 }
 
 export const RectButton = forwardRef<HTMLButtonElement, IRectButton>(
-    ({ appearance = 'primary', children, ...props }, ref) => {
+    (
+        {
+            appearance = 'primary',
+            fullWidth = false,
+            className,
+            children,
+            ...props
+        },
+        ref,
+    ) => {
         return (
             <button
                 type="button"
-                className={styles[`${appearance}`]}
+                className={cn(styles[`${appearance}`], className, {
+                    [styles['full-width']]: fullWidth,
+                })}
                 {...props}
                 ref={ref}
             >

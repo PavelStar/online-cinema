@@ -12,25 +12,28 @@ interface IIconButton
         ButtonHTMLAttributes<HTMLButtonElement>,
         HTMLButtonElement
     > {
-    appearance?: 'cross' | 'user';
+    appearance?: 'default';
     icon: ReactNode;
+    text?: string;
     className?: string;
 }
 
 export const IconButton = forwardRef<HTMLButtonElement, IIconButton>(
-    ({ appearance = 'cross', icon, className = '', ...props }, ref) => {
+    ({ appearance = 'default', icon, text, className = '', ...props }, ref) => {
         return (
             <button
                 type="button"
                 className={cn(
                     styles['icon-button'],
                     styles[`${appearance}`],
+                    { [styles['with-text']]: text },
                     className,
                 )}
                 {...props}
                 ref={ref}
             >
                 {icon}
+                {text && <span>{text}</span>}
             </button>
         );
     },

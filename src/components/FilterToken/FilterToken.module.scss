@@ -1,0 +1,23 @@
+@import './src/styles/variables';
+
+.filter-token {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    padding: 4px 13px;
+    border-radius: 15px;
+    background-color: $neutral-secondary;
+    color: $light-primary;
+    font-size: 14px;
+
+    .btn {
+        display: flex;
+
+        .icon {
+            path {
+                fill: $light-primary;
+            }
+        }
+    }
+}

@@ -1,3 +1,5 @@
+@import './src/styles/variables';
+
 .search {
     position: relative;
     display: flex;
@@ -14,7 +16,7 @@
 }
 
 .results-list {
-    color: black;
+    color: $light-primary;
 }
 
 .film {
@@ -30,7 +32,7 @@
         padding: 15px 10px;
 
         &:hover {
-            background-color: rgb(230 64 10 / 10%);
+            background-color: $neutral-secondary;
         }
     }
 }

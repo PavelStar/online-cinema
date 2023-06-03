@@ -1,0 +1,14 @@
+@import 'src/styles/variables';
+
+.filter-param {
+    width: fit-content;
+    background-color: #f2f2f2;
+    padding: 7px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+
+    &.active {
+        background-color: #474747;
+        color: $light-primary;
+    }
+}

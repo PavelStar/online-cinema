@@ -1,0 +1,32 @@
+@import './src/styles/variables';
+
+.title {
+    line-height: 100%;
+    font-weight: 900;
+    overflow-wrap: break-word;
+    color: $light-primary;
+
+    &.page {
+        font-size: 40px;
+    }
+
+    &.section {
+        font-size: 30px;
+    }
+
+    &.block {
+        font-size: 25px;
+    }
+
+    &.block-small {
+        font-size: 20px;
+    }
+
+    &.item {
+        font-size: 16px;
+    }
+
+    &.item-small {
+        font-size: 14px;
+    }
+}

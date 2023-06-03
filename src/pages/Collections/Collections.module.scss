@@ -1,0 +1,32 @@
+@import './src/styles/mixins';
+@import './src/styles/variables';
+
+.collections {
+    background-color: $dark-secondary;
+}
+
+.inner {
+    @include container;
+
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-areas:
+        'tabs pagination'
+        'tabs content';
+    gap: 20px;
+
+    .navigation-block {
+        grid-area: tabs;
+    }
+
+    .pagination {
+        grid-area: pagination;
+    }
+
+    .content-block {
+        grid-area: content;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,6 @@
+.app-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: red;
+    height: 100vh;
+}

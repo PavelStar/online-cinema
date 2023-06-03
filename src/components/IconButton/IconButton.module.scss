@@ -15,4 +15,28 @@
             }
         }
     }
+
+    &.with-text {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: auto;
+
+        &:hover,
+        &:focus {
+            opacity: 0.8;
+        }
+
+        svg {
+            width: 12px;
+            height: 12px;
+
+            &:hover,
+            &:focus {
+                path {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
 }

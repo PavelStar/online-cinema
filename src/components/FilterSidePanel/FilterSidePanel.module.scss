@@ -1,0 +1,27 @@
+@import './src/styles/variables';
+
+.filters-panel {
+    grid-area: filters-panel;
+    padding: 20px;
+    background-color: $neutral-primary;
+    border-radius: 15px;
+
+    .params {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .range-block {
+        .inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+    }
+
+    .selects-block {
+        display: grid;
+        gap: 20px;
+    }
+}

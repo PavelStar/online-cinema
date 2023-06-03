@@ -7,37 +7,49 @@ import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { NavLink } from 'react-router-dom';
 
 export const Menu: FC = (): JSX.Element => {
-    const [isPopupShown, setIsPopupShown] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
 
     const showMenuList = (): void => {
-        setIsPopupShown(true);
+        setIsMenuOpen(!isMenuOpen);
     };
 
-    useOutsideClick(menuRef, () => setIsPopupShown(false));
+    useOutsideClick(menuRef, () => setIsMenuOpen(false));
 
     const setActive = ({ isActive }: { isActive: boolean }): string =>
         isActive ? styles['active-link'] : undefined;
 
     return (
-        <div className={styles.menu} onClick={showMenuList} ref={menuRef}>
-            <IconButton icon={<MenuIcon />} />
-            {isPopupShown && (
+        <div className={styles.menu} ref={menuRef}>
+            <IconButton icon={<MenuIcon />} onClick={showMenuList} />
+            {isMenuOpen && (
                 <Popup>
                     <ul className={styles['menu-list']}>
                         <li>
-                            <NavLink className={setActive} to="/">
+                            <NavLink
+                                className={setActive}
+                                to="/"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Домой
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                className={setActive}
+                                to="/tops/top100"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
                                 Подборки
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className={setActive} to="/film">
-                                Новые фильмы
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className={setActive} to="/movies">
-                                Лучшие фильмы
+                            <NavLink
+                                className={setActive}
+                                to="/movies"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Все фильмы
                             </NavLink>
                         </li>
                     </ul>
